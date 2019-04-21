@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="person" class="com.suraj.spring.beans.Person" autowire="constructor">
+		<constructor-arg name="personId" value="1001" />
+		<constructor-arg name="personName" value="suraj singh" />
+		<!-- <constructor-arg name="passport" ref="passport" /> -->
+	</bean>
+
+	<!-- if class is not matched with bean property type then throw exception 
+		or if class name matched more than one with bean propery type 
+		then throw exception -->
+		
+	<bean id="passport1" class="com.suraj.spring.beans.Passport">
+		<property name="passportNum" value="25031991" />
+		<property name="name" value="Suraj" />
+	</bean>
+
+	<!-- <bean id="passport2" class="com.suraj.spring.beans.Passport"> <property 
+		name="passportNum" value="25031991" /> <property name="name" value="Suraj" 
+		/> </bean> -->
+</beans>
